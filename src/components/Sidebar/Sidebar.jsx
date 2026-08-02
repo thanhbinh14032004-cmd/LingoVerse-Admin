@@ -13,12 +13,11 @@ import {
 } from "react-icons/fa";
 
 
-function Sidebar() {
+function Sidebar({ open = true, closeMenu }) {
 
   const location = useLocation();
 
   const navigate = useNavigate();
-
 
 
   const menus = [
@@ -61,8 +60,6 @@ function Sidebar() {
 
 
 
-  // Đăng xuất
-
   const handleLogout = () => {
 
     localStorage.removeItem("token");
@@ -75,15 +72,47 @@ function Sidebar() {
 
   return (
 
-    <aside className="
-      w-[280px]
+    <aside
+
+      className={`
+      
+      fixed
+      top-0
+      left-0
+      z-50
+
       h-screen
+      w-[280px]
+
       bg-[#EAF2FF]
+
       border-r
       border-blue-100
+
       flex
       flex-col
-    ">
+
+      transition-transform
+      duration-300
+
+
+      ${
+
+        open
+
+        ? "translate-x-0"
+
+        : "-translate-x-full"
+
+      }
+
+
+      md:translate-x-0
+
+      `}
+
+    >
+
 
 
       {/* Logo */}
@@ -108,17 +137,16 @@ function Sidebar() {
 
 
 
+
       {/* Admin */}
 
       <div className="px-8 pb-8">
-
 
         <div className="
           flex
           items-center
           gap-4
         ">
-
 
           <img
             src="https://i.pravatar.cc/100"
@@ -151,9 +179,7 @@ function Sidebar() {
 
           </div>
 
-
         </div>
-
 
       </div>
 
@@ -173,35 +199,47 @@ function Sidebar() {
         {
           menus.map((item)=>(
 
-
             <Link
 
               key={item.path}
 
               to={item.path}
 
+              onClick={closeMenu}
+
               className={`
+
                 flex
                 items-center
                 gap-4
+
                 px-5
                 py-4
+
                 rounded-xl
+
                 font-medium
-                transition-all
+
+                transition
+
 
                 ${
                   location.pathname === item.path
+
                   ? "bg-[#3B82F6] text-white shadow-lg"
+
                   : "text-gray-700 hover:bg-blue-100"
+
                 }
+
               `}
 
             >
 
-
               <span className="text-lg">
+
                 {item.icon}
+
               </span>
 
 
@@ -209,7 +247,6 @@ function Sidebar() {
 
 
             </Link>
-
 
           ))
         }
@@ -230,18 +267,25 @@ function Sidebar() {
 
           to="/courses/new"
 
+          onClick={closeMenu}
+
           className="
             flex
             items-center
             justify-center
             gap-3
+
             rounded-xl
+
             bg-[#3B82F6]
+
             py-4
+
             text-white
+
             font-medium
+
             shadow-md
-            hover:bg-blue-700
           "
 
         >
@@ -265,6 +309,7 @@ function Sidebar() {
       <div className="
         p-5
         mt-6
+
         border-t
         border-blue-100
       ">
@@ -274,14 +319,20 @@ function Sidebar() {
 
           to="/settings"
 
+          onClick={closeMenu}
+
           className="
             flex
             items-center
             gap-4
+
             rounded-xl
+
             px-4
             py-3
+
             text-gray-700
+
             hover:bg-blue-100
           "
 
@@ -303,14 +354,20 @@ function Sidebar() {
 
           className="
             mt-2
+
             flex
             w-full
+
             items-center
             gap-4
+
             rounded-xl
+
             px-4
             py-3
+
             text-red-600
+
             hover:bg-red-50
           "
 
@@ -325,7 +382,6 @@ function Sidebar() {
 
 
       </div>
-
 
 
     </aside>

@@ -8,88 +8,220 @@ import BackupCard from "../../components/Settings/BackupCard";
 import { FaSave } from "react-icons/fa";
 
 
-function Settings(){
+function Settings() {
+
 
   return (
 
     <AdminLayout>
 
 
-      <div className="flex flex-col gap-8">
+      <div
+
+        className="
+          flex
+          flex-col
+
+          gap-6
+          md:gap-8
+        "
+
+      >
 
 
-        {/* HEADER */}
 
-        <div className="flex justify-between items-start">
+
+
+        {/* ================= HEADER ================= */}
+
+
+
+        <div
+
+          className="
+            flex
+            flex-col
+
+            gap-5
+
+            lg:flex-row
+            lg:items-start
+            lg:justify-between
+          "
+
+        >
+
 
 
           <div>
 
-            <h1 className="
-            text-5xl
-            font-bold
-            text-[#0058BE]
-            ">
+
+
+            <h1
+
+              className="
+                text-3xl
+                sm:text-4xl
+                lg:text-5xl
+
+                font-bold
+
+                text-[#0058BE]
+              "
+
+            >
+
               Cấu hình hệ thống & Cài đặt
+
             </h1>
 
 
-            <p className="
-            mt-2
-            text-gray-500
-            ">
+
+
+            <p
+
+              className="
+                mt-2
+
+                text-sm
+                md:text-base
+
+                text-gray-500
+              "
+
+            >
+
               Quản lý cấu hình chung, bảo mật, thông báo và phân quyền hệ thống.
+
             </p>
+
 
 
           </div>
 
 
 
+
+
+
+
+          {/* SAVE BUTTON */}
+
+
+
           <button
-          className="
-          flex
-          items-center
-          gap-2
-          bg-[#4A90E2]
-          text-white
-          px-6
-          py-3
-          rounded-lg
-          font-semibold
-          "
+
+            className="
+              flex
+              items-center
+              justify-center
+              gap-2
+
+              w-full
+              sm:w-fit
+
+              bg-[#4A90E2]
+
+              text-white
+
+              px-6
+              py-3
+
+              rounded-lg
+
+              font-semibold
+
+              shadow-sm
+
+              hover:bg-blue-600
+
+              transition
+            "
+
           >
 
-            <FaSave/>
+
+            <FaSave />
+
 
             Lưu thay đổi
 
+
+
           </button>
+
+
 
 
         </div>
 
 
 
-        {/* TAB */}
-
-        <SettingTabs />
 
 
 
-        {/* CONTENT */}
 
 
-        <GeneralSetting />
+        {/* ================= TAB ================= */}
 
 
-        <SystemSetting />
+
+        <div
+
+          className="
+            overflow-x-auto
+          "
+
+        >
+
+          <SettingTabs />
+
+        </div>
 
 
-        <BackupCard />
+
+
+
+
+
+
+        {/* ================= CONTENT ================= */}
+
+
+
+        <div
+
+          className="
+            flex
+            flex-col
+
+            gap-6
+          "
+
+        >
+
+
+
+          <GeneralSetting />
+
+
+
+          <SystemSetting />
+
+
+
+          <BackupCard />
+
+
+
+        </div>
+
+
+
 
 
       </div>
+
 
 
     </AdminLayout>
