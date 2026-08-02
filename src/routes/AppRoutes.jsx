@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 
 // Pages
@@ -19,17 +19,14 @@ import AddWord from "../pages/AddWord/AddWord";
 
 function AppRoutes() {
 
-
   return (
 
-    <BrowserRouter>
-
+    <HashRouter>
 
       <Routes>
 
 
-
-        {/* ================= LOGIN ================= */}
+        {/* LOGIN */}
 
         <Route
           path="/"
@@ -38,8 +35,7 @@ function AppRoutes() {
 
 
 
-
-        {/* ================= DASHBOARD ================= */}
+        {/* DASHBOARD */}
 
         <Route
           path="/dashboard"
@@ -48,8 +44,7 @@ function AppRoutes() {
 
 
 
-
-        {/* ================= USERS ================= */}
+        {/* USERS */}
 
         <Route
           path="/users"
@@ -58,8 +53,7 @@ function AppRoutes() {
 
 
 
-
-        {/* ================= COURSES ================= */}
+        {/* COURSES */}
 
         <Route
           path="/courses"
@@ -67,8 +61,7 @@ function AppRoutes() {
         />
 
 
-
-        {/* Thêm bài học */}
+        {/* ADD COURSE */}
 
         <Route
           path="/courses/new"
@@ -77,8 +70,7 @@ function AppRoutes() {
 
 
 
-
-        {/* ================= DICTIONARY ================= */}
+        {/* DICTIONARY */}
 
         <Route
           path="/dictionary"
@@ -86,8 +78,7 @@ function AppRoutes() {
         />
 
 
-
-        {/* Thêm từ mới */}
+        {/* ADD WORD */}
 
         <Route
           path="/dictionary/new"
@@ -96,8 +87,7 @@ function AppRoutes() {
 
 
 
-
-        {/* ================= EXAMS ================= */}
+        {/* EXAMS */}
 
         <Route
           path="/exams"
@@ -106,8 +96,7 @@ function AppRoutes() {
 
 
 
-
-        {/* ================= REPORTS ================= */}
+        {/* REPORTS */}
 
         <Route
           path="/reports"
@@ -116,8 +105,7 @@ function AppRoutes() {
 
 
 
-
-        {/* ================= SETTINGS ================= */}
+        {/* SETTINGS */}
 
         <Route
           path="/settings"
@@ -126,8 +114,7 @@ function AppRoutes() {
 
 
 
-
-        {/* ================= DEFAULT ================= */}
+        {/* DEFAULT */}
 
         <Route
           path="*"
@@ -135,12 +122,10 @@ function AppRoutes() {
         />
 
 
-
       </Routes>
 
 
-
-    </BrowserRouter>
+    </HashRouter>
 
   );
 
